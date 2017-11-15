@@ -121,7 +121,6 @@ namespace DeploySymlinks
 					Log("----Deploy result: " + result);
 					Log("----Deploy error: " + Marshal.GetLastWin32Error());
 				}
-				return;
 
 				Log("------------");
 			}

@@ -107,6 +107,22 @@ namespace DeploySymlinks
 			Log(deployFiltered.ToArray());
 
 			Log("--------------------------");
+			
+
+			foreach (string path in deployDirs)
+			{
+				Log("Deploying symlinks to:");
+				Log(path);
+
+				//CreateSymbolicLink
+				foreach (var item in srcDirs)
+				{
+
+				}
+
+				Log("------------");
+			}
+
 		}
 	}
 }

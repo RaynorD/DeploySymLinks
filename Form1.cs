@@ -9,7 +9,7 @@ namespace DeploySymlinks
 
 	public partial class Form1 : Form
 	{
-		[DllImport("kernel32.dll")]
+		[DllImport("kernel32.dll", SetLastError=true)]
 		static extern bool CreateSymbolicLink(string lpSymlinkFileName, string lpTargetFileName, SymbolicLink dwFlags);
 
 		enum SymbolicLink
@@ -111,18 +111,20 @@ namespace DeploySymlinks
 
 			foreach (DirectoryInfo deployDirInfo in deployDirs)
 			{
-				Log("Deploying symlinks to:");
-				Log(deployDirInfo.Name);
+				Log("--Deploying symlinks to: " + deployDirInfo.ToString());
 
 				//CreateSymbolicLink
 				foreach (DirectoryInfo srcDirInfo in srcDirs)
 				{
-					
+					Log("----Targeting: " + srcDirInfo.ToString());
+					bool result = CreateSymbolicLink(deployDirInfo.FullName + @"\" + srcDirInfo.Name, srcDirInfo.FullName, SymbolicLink.Directory);
+					Log("----Deploy result: " + result);
+					Log("----Deploy error: " + Marshal.GetLastWin32Error());
 				}
+				return;
 
 				Log("------------");
 			}
-
 		}
 	}
 }

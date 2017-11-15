@@ -144,7 +144,7 @@
 			this.txtWildcard.Name = "txtWildcard";
 			this.txtWildcard.Size = new System.Drawing.Size(791, 20);
 			this.txtWildcard.TabIndex = 8;
-			this.txtWildcard.Text = "testFolder";
+			this.txtWildcard.Text = "testMission_v11*";
 			// 
 			// Form1
 			// 

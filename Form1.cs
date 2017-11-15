@@ -86,8 +86,8 @@ namespace DeploySymlinks
 			DirectoryInfo dirDeploy = new DirectoryInfo(txtDeploy.Text);
 			string wildcard = txtWildcard.Text;
 
-			Log("Source Directory: " + dirSrc.FullName);
-			Log("Deploy Parent Directory: " + dirDeploy.FullName);
+			Log("Source Directory: " + dirSrc.ToString());
+			Log("Deploy Parent Directory: " + dirDeploy.ToString());
 			Log("Folder Wildcard: " + wildcard);
 
 			Log("--------------------------");
@@ -96,6 +96,7 @@ namespace DeploySymlinks
 
 			DirectoryInfo[] srcDirs = Directory.GetDirectories(txtSrc.Text).Select(d => new DirectoryInfo(d)).ToArray();
 			var srcFiltered = srcDirs.Where(d => !d.Attributes.HasFlag(FileAttributes.Hidden));
+			Log(srcDirs.Select(d => d.Name).ToArray());
 
 			Log("--------------------------");
 
@@ -103,6 +104,7 @@ namespace DeploySymlinks
 
 			DirectoryInfo[] deployDirs = Directory.GetDirectories(txtDeploy.Text, wildcard).Select(d => new DirectoryInfo(d)).ToArray();
 			var deployFiltered = deployDirs.Where(d => !d.Attributes.HasFlag(FileAttributes.Hidden));
+			Log(deployDirs.Select(d => d.Name).ToArray());
 
 			Log("--------------------------");
 			

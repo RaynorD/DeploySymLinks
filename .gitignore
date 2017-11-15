@@ -1,4 +1,4 @@
-bin\
-obj\
+bin/
+obj/
 obj/Debug/DeploySymlinks.csproj.CoreCompileInputs.cache
 obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

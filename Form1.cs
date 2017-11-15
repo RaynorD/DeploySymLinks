@@ -94,9 +94,17 @@ namespace DeploySymlinks
 
 			Log("Source directories:");
 
-			string[] dirs = Directory.GetDirectories(txtSrc.Text);
-			var filtered = dirs.Where(d => !(new DirectoryInfo(d)).Attributes.HasFlag(FileAttributes.Hidden));
-			Log(filtered.ToArray());
+			string[] srcDirs = Directory.GetDirectories(txtSrc.Text);
+			var srcFiltered = srcDirs.Where(d => !(new DirectoryInfo(d)).Attributes.HasFlag(FileAttributes.Hidden));
+			Log(srcFiltered.ToArray());
+
+			Log("--------------------------");
+
+			Log("Output directories:");
+
+			string[] deployDirs = Directory.GetDirectories(txtDeploy.Text);
+			var deployFiltered = deployDirs.Where(d => !(new DirectoryInfo(d)).Attributes.HasFlag(FileAttributes.Hidden));
+			Log(deployFiltered.ToArray());
 
 			Log("--------------------------");
 		}

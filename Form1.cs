@@ -96,7 +96,7 @@ namespace DeploySymlinks
 
 			DirectoryInfo[] srcDirs = Directory.GetDirectories(txtSrc.Text).Select(d => new DirectoryInfo(d)).ToArray();
 			var srcFiltered = srcDirs.Where(d => !d.Attributes.HasFlag(FileAttributes.Hidden));
-			Log(srcDirs.Select(d => d.Name).ToArray());
+			Log(srcFiltered.Select(d => d.Name).ToArray());
 
 			Log("--------------------------");
 
@@ -104,17 +104,17 @@ namespace DeploySymlinks
 
 			DirectoryInfo[] deployDirs = Directory.GetDirectories(txtDeploy.Text, wildcard).Select(d => new DirectoryInfo(d)).ToArray();
 			var deployFiltered = deployDirs.Where(d => !d.Attributes.HasFlag(FileAttributes.Hidden));
-			Log(deployDirs.Select(d => d.Name).ToArray());
+			Log(deployFiltered.Select(d => d.Name).ToArray());
 
 			Log("--------------------------");
 			
 
-			foreach (DirectoryInfo deployDirInfo in deployDirs)
+			foreach (DirectoryInfo deployDirInfo in deployFiltered)
 			{
 				Log("--Deploying symlinks to: " + deployDirInfo.ToString());
 
 				//CreateSymbolicLink
-				foreach (DirectoryInfo srcDirInfo in srcDirs)
+				foreach (DirectoryInfo srcDirInfo in srcFiltered)
 				{
 					Log("----Targeting: " + srcDirInfo.ToString());
 					bool result = CreateSymbolicLink(deployDirInfo.FullName + @"\" + srcDirInfo.Name, srcDirInfo.FullName, SymbolicLink.Directory);

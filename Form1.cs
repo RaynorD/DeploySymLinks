@@ -102,7 +102,7 @@ namespace DeploySymlinks
 
 			Log("Output directories:");
 
-			string[] deployDirs = Directory.GetDirectories(txtDeploy.Text);
+			string[] deployDirs = Directory.GetDirectories(txtDeploy.Text, wildcard);
 			var deployFiltered = deployDirs.Where(d => !(new DirectoryInfo(d)).Attributes.HasFlag(FileAttributes.Hidden));
 			Log(deployFiltered.ToArray());
 

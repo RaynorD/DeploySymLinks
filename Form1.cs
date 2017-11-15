@@ -94,30 +94,28 @@ namespace DeploySymlinks
 
 			Log("Source directories:");
 
-			string[] srcDirs = Directory.GetDirectories(txtSrc.Text);
-			var srcFiltered = srcDirs.Where(d => !(new DirectoryInfo(d)).Attributes.HasFlag(FileAttributes.Hidden));
-			Log(srcFiltered.ToArray());
+			DirectoryInfo[] srcDirs = Directory.GetDirectories(txtSrc.Text).Select(d => new DirectoryInfo(d)).ToArray();
+			var srcFiltered = srcDirs.Where(d => !d.Attributes.HasFlag(FileAttributes.Hidden));
 
 			Log("--------------------------");
 
 			Log("Output directories:");
 
-			string[] deployDirs = Directory.GetDirectories(txtDeploy.Text, wildcard);
-			var deployFiltered = deployDirs.Where(d => !(new DirectoryInfo(d)).Attributes.HasFlag(FileAttributes.Hidden));
-			Log(deployFiltered.ToArray());
+			DirectoryInfo[] deployDirs = Directory.GetDirectories(txtDeploy.Text, wildcard).Select(d => new DirectoryInfo(d)).ToArray();
+			var deployFiltered = deployDirs.Where(d => !d.Attributes.HasFlag(FileAttributes.Hidden));
 
 			Log("--------------------------");
 			
 
-			foreach (string path in deployDirs)
+			foreach (DirectoryInfo deployDirInfo in deployDirs)
 			{
 				Log("Deploying symlinks to:");
-				Log(path);
+				Log(deployDirInfo.Name);
 
 				//CreateSymbolicLink
-				foreach (var item in srcDirs)
+				foreach (DirectoryInfo srcDirInfo in srcDirs)
 				{
-
+					
 				}
 
 				Log("------------");

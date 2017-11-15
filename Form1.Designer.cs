@@ -59,8 +59,7 @@
 			this.txtSrc.Name = "txtSrc";
 			this.txtSrc.Size = new System.Drawing.Size(711, 20);
 			this.txtSrc.TabIndex = 1;
-			this.txtSrc.Text = "C:\\Users\\dkbso\\Documents\\Arma 3 - Other Profiles\\CW2%2eRaynor%2eD\\missions\\!Rayno" +
-    "rsTools\\master\\RaynorA3Tools";
+			this.txtSrc.Text = "C:\\test\\source";
 			// 
 			// label1
 			// 
@@ -89,7 +88,7 @@
 			this.txtDeploy.Name = "txtDeploy";
 			this.txtDeploy.Size = new System.Drawing.Size(711, 20);
 			this.txtDeploy.TabIndex = 4;
-			this.txtDeploy.Text = "C:\\Users\\dkbso\\Documents\\Arma 3 - Other Profiles\\CW2%2eRaynor%2eD\\missions";
+			this.txtDeploy.Text = "C:\\test\\deploy";
 			// 
 			// btnBrowseDeploy
 			// 
@@ -145,7 +144,7 @@
 			this.txtWildcard.Name = "txtWildcard";
 			this.txtWildcard.Size = new System.Drawing.Size(791, 20);
 			this.txtWildcard.TabIndex = 8;
-			this.txtWildcard.Text = "Alpha_1-7_Training";
+			this.txtWildcard.Text = "testFolder";
 			// 
 			// Form1
 			// 

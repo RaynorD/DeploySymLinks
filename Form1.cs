@@ -25,12 +25,12 @@ namespace DeploySymlinks
 
 		private void Log(string text)
 		{
-			txtOutput.Text += Environment.NewLine + text;
+			txtOutput.AppendText(Environment.NewLine + text);
 		}
 
 		private void Log(string[] text)
 		{
-			txtOutput.Text += Environment.NewLine + string.Join(Environment.NewLine, text);
+			txtOutput.AppendText(Environment.NewLine + string.Join(Environment.NewLine, text));
 		}
 
 		private void UserSelectFolder(TextBox box)
@@ -79,6 +79,8 @@ namespace DeploySymlinks
 			}
 
 			Log("=============================");
+			Log("=============================");
+			Log("Starting new deployment");
 
 			DirectoryInfo dirSrc = new DirectoryInfo(txtSrc.Text);
 			DirectoryInfo dirDeploy = new DirectoryInfo(txtDeploy.Text);

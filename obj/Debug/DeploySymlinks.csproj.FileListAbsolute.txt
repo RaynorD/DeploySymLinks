@@ -1,0 +1,10 @@
+E:\Dev\DeploySymlinks\DeploySymlinks\bin\Debug\DeploySymlinks.exe.config
+E:\Dev\DeploySymlinks\DeploySymlinks\bin\Debug\DeploySymlinks.exe
+E:\Dev\DeploySymlinks\DeploySymlinks\bin\Debug\DeploySymlinks.pdb
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.csprojResolveAssemblyReference.cache
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.Form1.resources
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.Properties.Resources.resources
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.csproj.GenerateResource.Cache
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.csproj.CoreCompileInputs.cache
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.exe
+E:\Dev\DeploySymlinks\DeploySymlinks\obj\Debug\DeploySymlinks.pdb

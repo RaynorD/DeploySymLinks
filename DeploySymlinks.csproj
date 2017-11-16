@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="filepath.Designer.cs">
+    <Compile Include="Properties\filepath.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>filepath.settings</DependentUpon>
@@ -70,7 +70,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="filepath.settings">
+    <None Include="Properties\filepath.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>filepath.Designer.cs</LastGenOutput>
     </None>

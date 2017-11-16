@@ -138,6 +138,12 @@ namespace DeploySymlinks
 			}
 		}
 
-		
+		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Properties.filepath.Default.txtSourcePath = txtSrc.Text;
+			Properties.filepath.Default.txtDeployPath = txtDeploy.Text;
+			Properties.filepath.Default.txtWildcard = txtWildcard.Text;
+			Properties.filepath.Default.Save();
+		}
 	}
 }

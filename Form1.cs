@@ -119,23 +119,30 @@ namespace DeploySymlinks
 			Log(deployFiltered.Select(d => d.Name).ToArray());
 
 			Log("--------------------------");
-			
+
+			int deploySuccess = 0;
+			int deployFail = 0;
 
 			foreach (DirectoryInfo deployDirInfo in deployFiltered)
 			{
-				Log("--Deploying symlinks to: " + deployDirInfo.ToString());
-
-				//CreateSymbolicLink
 				foreach (DirectoryInfo srcDirInfo in srcFiltered)
 				{
-					Log("----Targeting: " + srcDirInfo.ToString());
-					bool result = CreateSymbolicLink(deployDirInfo.FullName + @"\" + srcDirInfo.Name, srcDirInfo.FullName, SymbolicLink.Directory);
-					Log("----Deploy result: " + result);
-					Log("----Deploy error: " + Marshal.GetLastWin32Error());
+					string output = "Deploy ";
+					if (CreateSymbolicLink(deployDirInfo.FullName + @"\" + srcDirInfo.Name, srcDirInfo.FullName, SymbolicLink.Directory))
+					{
+						output += "Successful - ";
+						deploySuccess++;
+					} else
+					{
+						output += "Failed (" + Marshal.GetLastWin32Error() + ") - ";
+						deployFail++;
+					}
+					output += deployDirInfo.Name + @"\" + srcDirInfo.Name;
+					Log(output);
 				}
-
-				Log("------------");
 			}
+			Log("Deploy complete - Success: " + deploySuccess + " - Failed: " + deployFail);
+			Log("------------");
 		}
 
 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)

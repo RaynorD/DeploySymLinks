@@ -48,6 +48,13 @@ namespace DeploySymlinks
 			}
 		}
 
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			txtSrc.Text = Properties.filepath.Default.txtSourcePath;
+			txtDeploy.Text = Properties.filepath.Default.txtDeployPath;
+			txtWildcard.Text = Properties.filepath.Default.txtWildcard;
+		}
+
 		private void BtnBrowseSrc_Click(object sender, EventArgs e)
 		{
 			UserSelectFolder(txtSrc);
@@ -60,7 +67,12 @@ namespace DeploySymlinks
 
 		private void BtnGo_Click(object sender, EventArgs e)
 		{
-			if(string.IsNullOrWhiteSpace(txtSrc.Text) || !Directory.Exists(txtSrc.Text))
+			Properties.filepath.Default.txtSourcePath = txtSrc.Text;
+			Properties.filepath.Default.txtDeployPath = txtDeploy.Text;
+			Properties.filepath.Default.txtWildcard = txtWildcard.Text;
+			Properties.filepath.Default.Save();
+
+			if (string.IsNullOrWhiteSpace(txtSrc.Text) || !Directory.Exists(txtSrc.Text))
 			{
 				Log("Source folder not valid");
 				return;
@@ -125,5 +137,7 @@ namespace DeploySymlinks
 				Log("------------");
 			}
 		}
+
+		
 	}
 }

@@ -22,41 +22,5 @@ namespace DeploySymlinks.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string txtDeployPath {
-            get {
-                return ((string)(this["txtDeployPath"]));
-            }
-            set {
-                this["txtDeployPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string txtSrcPath {
-            get {
-                return ((string)(this["txtSrcPath"]));
-            }
-            set {
-                this["txtSrcPath"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string txtWildcard {
-            get {
-                return ((string)(this["txtWildcard"]));
-            }
-            set {
-                this["txtWildcard"] = value;
-            }
-        }
     }
 }
